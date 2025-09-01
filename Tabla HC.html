@@ -1,0 +1,2682 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Diabetes</title>
+
+
+    <!-- <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.bootstrap5.min.css" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/responsive/2.4.0/js/responsive.bootstrap5.js"></script> -->
+
+    <script type="text/javascript" src="scripts/papaparse.min.js"></script>
+
+    <style>
+        .IG-elevado {
+            background-color: #ff5050;
+        }
+
+        .IG-medio {
+            background-color: #f3b10d;
+        }
+
+        .IG-bajo {
+            background-color: #92d050;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="text-right"><strong>* Raciones de HC en medida de consumo habitual</strong></div>
+
+
+    <h2><img style="vertical-align:bottom"
+            src="https://www.fundacionparalasalud.org/upload/hidratos_carbono/1/lacteos.png" alt=""> &nbsp;<span
+            style="line-height: 80px;">Lácteos</span></h2>
+    <div class="table-responsive">
+        <table class="table table-bordered hc" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="background-color:#95b3d7;vertical-align:middle">Alimento</th>
+                    <th rowspan="2" style="background-color:#95b3d7;vertical-align:middle">1 ración de HC son (en
+                        gramos)</th>
+                    <th colspan="2" style="border-bottom-width:1px;background-color:#95b3d7;vertical-align:middle">
+                        ¿Cuántas raciones de HC contiene el alimento en su medida habitual de consumo?</th>
+                    <th rowspan="2" style="background-color:#95b3d7;vertical-align:middle">I.G.</th>
+                </tr>
+                <tr>
+                    <th style="background-color:#95b3d7;vertical-align:middle">Medida habitual</th>
+                    <th style="background-color:#95b3d7;vertical-align:middle">Raciones de HC en medida habitual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:left">Cuajada</td>
+                    <td>175</td>
+                    <td>Unidad (125ml)</td>
+                    <td>0.6</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Flan</td>
+                    <td>45</td>
+                    <td>Unidad (110g)</td>
+                    <td>2.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Flan 0%</td>
+                    <td>70</td>
+                    <td>Unidad (110g)</td>
+                    <td>1.6</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Helado "sin azúcares añadidos"</td>
+                    <td>100</td>
+                    <td>Unidad (100ml)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style=";text-align:left" rowspan="2">Helado de crema</td>
+                    <td rowspan="2">50</td>
+                    <td>Bola mediana (100g)</td>
+                    <td>2</td>
+                    <td class="IG-medio" rowspan="2">60</td>
+                </tr>
+                <tr>
+                    <td>Tarrina individual (150ml)</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Helado de hielo </td>
+                    <td>50</td>
+                    <td>Unidad (100ml)</td>
+                    <td>2</td>
+                    <td class="IG-medio">65</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Kéfir</td>
+                    <td>200</td>
+                    <td>Unidad (125ml)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Leche condensada</td>
+                    <td>20</td>
+                    <td>Cucharada sopera (20g)</td>
+                    <td>1</td>
+                    <td class="IG-medio">61</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Leche desnatada</td>
+                    <td>200</td>
+                    <td>Vaso o taza (200ml)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">32</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Leche en polvo</td>
+                    <td>25</td>
+                    <td>Cucharada sopera colmada (25g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Leche entera</td>
+                    <td>200</td>
+                    <td>Vaso o taza (200ml)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">27</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Leche semidesnatada</td>
+                    <td>200</td>
+                    <td>Vaso o taza (200ml)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Leche sin lactosa</td>
+                    <td>200</td>
+                    <td>Vaso o taza (200ml)</td>
+                    <td>1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Nata líquida</td>
+                    <td>300</td>
+                    <td>Botellín o brick (200ml)</td>
+                    <td>0.7</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Natillas</td>
+                    <td>50</td>
+                    <td>Unidad (125ml)</td>
+                    <td>2.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Queso fresco</td>
+                    <td>250</td>
+                    <td>Tarrina individual (70g)</td>
+                    <td>0.3</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Queso tipo Petit suisse</td>
+                    <td>75</td>
+                    <td>Unidad (50g)</td>
+                    <td>0.6</td>
+                    <td class="IG-bajo">40</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Quesos de pasta, semis o curados</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Yogur desnatado, de sabores o fruta</td>
+                    <td>150</td>
+                    <td>Unidad (125ml)</td>
+                    <td>0.8</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Yogur entero, de sabores o fruta</td>
+                    <td>70</td>
+                    <td>Unidad (125ml)</td>
+                    <td>1.5</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Yogur líquido</td>
+                    <td>70</td>
+                    <td>Unidad (200ml)</td>
+                    <td>3</td>
+                    <td class="IG-bajo">40</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Yogur natural entero o desnatado</td>
+                    <td>200</td>
+                    <td>Unidad (125ml)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Yogur tipo Actimel</td>
+                    <td>100</td>
+                    <td>Unidad (100ml)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Yogur tipo Actimel 0%</td>
+                    <td>200</td>
+                    <td>Unidad (100ml)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2><img style="vertical-align:bottom"
+            src="https://www.fundacionparalasalud.org/upload/hidratos_carbono/2/cereales.png" alt=""> &nbsp;<span
+            style="line-height: 80px;">Cereales y derivados, harinas, legumbres y tubérculos</span></h2>
+    <div class="table-responsive">
+        <table class="table table-bordered hc" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="background-color:#fabf8f;vertical-align:middle">Alimento</th>
+                    <th rowspan="2" style="background-color:#fabf8f;vertical-align:middle">1 ración de HC son (en
+                        gramos)</th>
+                    <th colspan="2" style="border-bottom-width:1px;background-color:#fabf8f;vertical-align:middle">
+                        ¿Cuántas raciones de HC contiene el alimento en su medida habitual de consumo?</th>
+                    <th rowspan="2" style="background-color:#fabf8f;vertical-align:middle">I.G.</th>
+                </tr>
+                <tr>
+                    <th style="background-color:#fabf8f;vertical-align:middle">Medida habitual</th>
+                    <th style="background-color:#fabf8f;vertical-align:middle">Raciones de HC en medida habitual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:left">Altramuz</td>
+                    <td>50</td>
+                    <td>Tapa (30g)</td>
+                    <td>0.6</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Arroz blanco, crudo</td>
+                    <td>13</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Arroz blanco, hervido</td>
+                    <td rowspan="3">38</td>
+                    <td>Guarnición (80g)</td>
+                    <td>2</td>
+                    <td class="IG-elevado" rowspan="3">70</td>
+                </tr>
+                <tr>
+                    <td>Plato mediano (160g)</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Plato grande (240g)</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Arroz hinchado para desayuno</td>
+                    <td>12</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-alto">85</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Arroz integral, crudo</td>
+                    <td>13</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Arroz integral, hervido</td>
+                    <td rowspan="3">40</td>
+                    <td>Guarnición (80g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo" rowspan="3">50</td>
+                </tr>
+                <tr>
+                    <td>Plato mediano (160g)</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Plato grande (240g)</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Arroz salvaje, crudo</td>
+                    <td>13</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Arroz salvaje, hervido</td>
+                    <td>34</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Arroz, cocido</td>
+                    <td rowspan="3">38</td>
+                    <td>Guarnición (80g)</td>
+                    <td>2</td>
+                    <td class="IG-alto" rowspan="3">70</td>
+                </tr>
+                <tr>
+                    <td>Plato mediano (160g)</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Plato grande (240g)</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Arroz, crudo</td>
+                    <td>13</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Avena en copos</td>
+                    <td>15</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">40</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Avena, crudo</td>
+                    <td>15</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Avena, hervido</td>
+                    <td>34</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">40</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Boniato</td>
+                    <td rowspan="3">50</td>
+                    <td>Pequeño (80g)</td>
+                    <td>1.6</td>
+                    <td class="IG-bajo" rowspan="3">50</td>
+                </tr>
+                <tr>
+                    <td>Mediano (160g)</td>
+                    <td>3.2</td>
+                </tr>
+                <tr>
+                    <td>Grande (320g)</td>
+                    <td>6.4</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cebada, cocido</td>
+                    <td>42</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">45</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cebada, crudo</td>
+                    <td>14</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Centeno, cocido</td>
+                    <td>38</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">45</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Centeno, crudo</td>
+                    <td>15</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">45</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cereales desayuno (trigo)</td>
+                    <td>15</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-alto">77</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cereales desayuno, ricos en fibra (>10%)</td>
+                    <td>20</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">50</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cereales tipo muesli</td>
+                    <td>15</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-medio">65</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cuscús, cocido</td>
+                    <td>45</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-medio">65</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cuscús, crudo</td>
+                    <td>15</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Fideos de arroz, hervido</td>
+                    <td>50</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">50</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Fideos de soja, hervido</td>
+                    <td>40</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Galleta sin azúcar</td>
+                    <td>18</td>
+                    <td>Unidad (7g)</td>
+                    <td>0.3</td>
+                    <td class="IG-bajo">50</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Galleta tipo Digestiva</td>
+                    <td>16</td>
+                    <td>Unidad (11g)</td>
+                    <td>0.7</td>
+                    <td class="IG-medio">65</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Galleta tipo María</td>
+                    <td>15</td>
+                    <td>Unidad (7g)</td>
+                    <td>0.4</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Galleta tipo Príncipe</td>
+                    <td>14</td>
+                    <td>Unidad (15g)</td>
+                    <td>1</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Garbanzo, crudo</td>
+                    <td>20</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Garbanzo, en conserva</td>
+                    <td>70</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Garbanzo, hervido</td>
+                    <td rowspan="3">55</td>
+                    <td>Guarnición (100g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo" rowspan="3">35</td>
+                </tr>
+                <tr>
+                    <td>Plato mediano (200g)</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Plato grande (300g)</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Gofio</td>
+                    <td>12</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Guisantes congelados, frescos, de lata</td>
+                    <td rowspan="3">100</td>
+                    <td>Guarnición (200g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo" rowspan="3">35</td>
+                </tr>
+                <tr>
+                    <td>Plato mediano (400g)</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Plato grande (600g)</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Harina de avena</td>
+                    <td>18</td>
+                    <td>Cucharada sopera rasa (14g)</td>
+                    <td>0.8</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Harina de cebada o centeno</td>
+                    <td>17</td>
+                    <td>Cucharada sopera rasa (14g)</td>
+                    <td>0.8</td>
+                    <td class="IG-bajo">45</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Harina de maíz</td>
+                    <td>15</td>
+                    <td>Cucharada sopera rasa (14g)</td>
+                    <td>1</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Harina de soja</td>
+                    <td>70</td>
+                    <td>Cucharada sopera rasa (14g)</td>
+                    <td>0.2</td>
+                    <td class="IG-bajo">25</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Harina de trigo</td>
+                    <td>15</td>
+                    <td>Cucharada sopera rasa (14g)</td>
+                    <td>1</td>
+                    <td class="IG-alto">78</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Hojaldre crudo</td>
+                    <td>30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Hojaldre horneado</td>
+                    <td>24</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Hummus</td>
+                    <td>100</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Judías blancas, crudo</td>
+                    <td>25</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Judías blancas, en conserva</td>
+                    <td>70</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Judías blancas, hervido</td>
+                    <td rowspan="3">55</td>
+                    <td>Guarnición (100g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo" rowspan="3">35</td>
+                </tr>
+                <tr>
+                    <td>Plato mediano (200g)</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Plato grande (300g)</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Legumbre, en conserva</td>
+                    <td>70</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Lentejas, crudo</td>
+                    <td>20</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Lentejas, en conserva</td>
+                    <td>70</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Lentejas, hervido</td>
+                    <td rowspan="3">50</td>
+                    <td>Guarnición (100g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo" rowspan="3">35</td>
+                </tr>
+                <tr>
+                    <td>Plato mediano (200g)</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Plato grande (300g)</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Maíz en lata</td>
+                    <td>50</td>
+                    <td>Lata pequeña (150g)</td>
+                    <td>3</td>
+                    <td class="IG-medio">65</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Maíz en lata sin azúcar añadido</td>
+                    <td>90</td>
+                    <td>Lata pequeña (150g)</td>
+                    <td>1.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Maíz tostado (quicos)</td>
+                    <td>20</td>
+                    <td>Bolsa pequeña (40g)</td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Mijo, cocido</td>
+                    <td>53</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Mijo, crudo</td>
+                    <td>15</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Pan blanco (de trigo)</td>
+                    <td rowspan="3">20</td>
+                    <td>Barra de 1/4, unos 3 cm (20g)</td>
+                    <td>1</td>
+                    <td class="IG-alto" rowspan="3">70</td>
+                </tr>
+                <tr>
+                    <td>Panecillo restaurante (60g)</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Barra de 1/4 entera (180g)</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pan de centeno</td>
+                    <td>20</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-medio">65</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="2">Pan de hamburguesa o Frankfurt
+                    </td>
+                    <td rowspan="2">18</td>
+                    <td>Unidad pequeña (55g)</td>
+                    <td>3</td>
+                    <td class="IG-alto" rowspan="2">85</td>
+                </tr>
+                <tr>
+                    <td>Unidad (80g)</td>
+                    <td>4.5</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pan de molde</td>
+                    <td>20</td>
+                    <td>Rebanada (25g)</td>
+                    <td>1.2</td>
+                    <td class="IG-alto">85</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pan de trigo de grano entero</td>
+                    <td>23</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">40</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pan en bastoncitos</td>
+                    <td>15</td>
+                    <td>3 unidades (15g)</td>
+                    <td>1</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pan rallado</td>
+                    <td>15</td>
+                    <td>Cucharada sopera colmada (23g)</td>
+                    <td>1.5</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="4">Pan tostado o biscote</td>
+                    <td rowspan="4">15</td>
+                    <td>Tostada canapé (2g)</td>
+                    <td>0.15</td>
+                    <td class="IG-alto" rowspan="4">70</td>
+                </tr>
+                <tr>
+                    <td>Unidad mini (3,3g)</td>
+                    <td>0.25</td>
+                </tr>
+                <tr>
+                    <td>Unidad (10g)</td>
+                    <td>0.6</td>
+                </tr>
+                <tr>
+                    <td>Krispoll (12,5g)</td>
+                    <td>0.8</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pasta al huevo, crudo</td>
+                    <td>16</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pasta alimenticia integral, crudo</td>
+                    <td>15</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Pasta alimenticia integral,
+                        hervido</td>
+                    <td rowspan="3">45</td>
+                    <td>Guarnición (90g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo" rowspan="3">45</td>
+                </tr>
+                <tr>
+                    <td>Plato mediano (180g)</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Plato grande (270g)</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pasta alimenticia, crudo</td>
+                    <td>14</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Pasta alimenticia, hervido</td>
+                    <td rowspan="3">45</td>
+                    <td>Guarnición (90g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo" rowspan="3">50</td>
+                </tr>
+                <tr>
+                    <td>Plato mediano (180g)</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Plato grande (270g)</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pasta fresca rellena</td>
+                    <td>30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pasta sin glúten</td>
+                    <td>13</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-alto">73</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Patata, al horno o asada</td>
+                    <td>35</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-medio">62</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Patata, crudo</td>
+                    <td>65</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Patata, hervida</td>
+                    <td rowspan="3">65</td>
+                    <td>Guarnición (100g)</td>
+                    <td>1.5</td>
+                    <td class="IG-medio" rowspan="3">65</td>
+                </tr>
+                <tr>
+                    <td>Plato mediano (200g)</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Plato grande (300g)</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Patatas chips</td>
+                    <td>20</td>
+                    <td>Bolsa pequeña (30g)</td>
+                    <td>1.5</td>
+                    <td class="IG-alto">95</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="2">Patatas fritas</td>
+                    <td rowspan="2">30</td>
+                    <td>Guarnición (60g)</td>
+                    <td>2</td>
+                    <td class="IG-alto" rowspan="2">70</td>
+                </tr>
+                <tr>
+                    <td>Porción hamburguesería (120g)</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Puré de patatas, elaborado con leche</td>
+                    <td>80</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-alto">90</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Puré de patatas, en copos</td>
+                    <td>15</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-alto">90</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Quinoa, crudo</td>
+                    <td>19</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Quinoa, hervido</td>
+                    <td>48</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Sémola de trigo, crudo</td>
+                    <td>14</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Sémola de trigo, hervido</td>
+                    <td>90</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-medio">67</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Soja seca, crudo</td>
+                    <td>30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Soja seca, hervido</td>
+                    <td>100</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="2">Sushi</td>
+                    <td rowspan="2">45</td>
+                    <td>Pieza pequeña (20g)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo" rowspan="2">42</td>
+                </tr>
+                <tr>
+                    <td>Pieza grande (40g)</td>
+                    <td>0.9</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Tapioca, cocido</td>
+                    <td>33</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-alto">84</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Tapioca, crudo</td>
+                    <td>12</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Trigo sarraceno, crudo</td>
+                    <td>14</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Trigo sarraceno, hervido</td>
+                    <td>42</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">40</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Trigo tierno, crudo</td>
+                    <td>16</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Trigo tierno, hervido</td>
+                    <td>39</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">54</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Yuca, cocido</td>
+                    <td>33</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">55</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Yuca, crudo</td>
+                    <td>25</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2><img style="vertical-align:bottom"
+            src="https://www.fundacionparalasalud.org/upload/hidratos_carbono/3/fruta.png" alt=""> &nbsp;<span
+            style="line-height: 80px;">Frutas</span></h2>
+    <div class="table-responsive">
+        <table class="table table-bordered hc" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="vertical-align:middle">Alimento</th>
+                    <th rowspan="2" style="vertical-align:middle">1 ración de HC son (en
+                        gramos)</th>
+                    <th colspan="2" style="border-bottom-width:1px;vertical-align:middle">
+                        ¿Cuántas raciones de HC contiene el alimento en su medida habitual de consumo?</th>
+                    <th rowspan="2" style="vertical-align:middle">I.G.</th>
+                </tr>
+                <tr>
+                    <th style="vertical-align:middle">Medida habitual</th>
+                    <th style="vertical-align:middle">Raciones de HC en medida habitual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:left">Aguacate</td>
+                    <td>160</td>
+                    <td>Unidad mediana (150g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">10</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Albaricoque</td>
+                    <td>150</td>
+                    <td>Unidad mediana (50g)</td>
+                    <td>0.3</td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Arándano</td>
+                    <td>100</td>
+                    <td>Puñado, con la mano cerrada (20g)</td>
+                    <td>0.25</td>
+                    <td class="IG-bajo">25</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Caqui (persimon)</td>
+                    <td>65</td>
+                    <td>Unidad mediana (150g)</td>
+                    <td>2.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Castaña cruda</td>
+                    <td>30</td>
+                    <td>Unidad (10g)</td>
+                    <td>0.3</td>
+                    <td class="IG-medio">65</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Castaña tostada</td>
+                    <td>25</td>
+                    <td>Unidad (3g)</td>
+                    <td>0.3</td>
+                    <td class="IG-medio">65</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cereza</td>
+                    <td>100</td>
+                    <td>12 unidades (100g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">25</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Chirimoya</td>
+                    <td>50</td>
+                    <td>Unidad mediana (200g)</td>
+                    <td>4</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Ciruela</td>
+                    <td>100</td>
+                    <td>2 unidades (100g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Coco fresco</td>
+                    <td>200</td>
+                    <td>Tajada mediana (35g)</td>
+                    <td>0.2</td>
+                    <td class="IG-bajo">45</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Coco seco</td>
+                    <td>150</td>
+                    <td>Cucharada colmada (20g)</td>
+                    <td>0.1</td>
+                    <td class="IG-bajo">45</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Dátil</td>
+                    <td>15</td>
+                    <td>Unidad (12g)</td>
+                    <td>0.7</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Frambuesa</td>
+                    <td>150</td>
+                    <td>Un puñado, con la mano cerrada (20g)</td>
+                    <td>0.2</td>
+                    <td class="IG-bajo">25</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Fresones</td>
+                    <td>200</td>
+                    <td>8 unidades grandes (200g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">25</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Granada</td>
+                    <td>70</td>
+                    <td>Unidad mediana (175g)</td>
+                    <td>2.5</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Grosella</td>
+                    <td>200</td>
+                    <td>Puñado, con mano cerrada (20g)</td>
+                    <td>0.1</td>
+                    <td class="IG-bajo">25</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Grosella negra</td>
+                    <td>140</td>
+                    <td>Puñado, con mano cerrada (20g)</td>
+                    <td>0.2</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Higos</td>
+                    <td>100</td>
+                    <td>Unidad mediana (50g)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Kiwi</td>
+                    <td>100</td>
+                    <td>Unidad mediana (100g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">50</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Limón</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Litchi</td>
+                    <td>70</td>
+                    <td>6 unidades (70g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">50</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Mandarina</td>
+                    <td>100</td>
+                    <td>Unidad mediana (100g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Mango</td>
+                    <td>100</td>
+                    <td>Unidad mediana (200g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo">50</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Manzana</td>
+                    <td>100</td>
+                    <td>Unidad mediana (200g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Manzana asada</td>
+                    <td>50</td>
+                    <td>Unidad mediana (120g)</td>
+                    <td>2.5</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Melocotón</td>
+                    <td>100</td>
+                    <td>Unidad mediana (200g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Melocotón en conserva</td>
+                    <td>50</td>
+                    <td>Una mitad (50g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Melón</td>
+                    <td>200</td>
+                    <td>Un tajada mediana (200g)</td>
+                    <td>1</td>
+                    <td class="IG-medio">60</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Membrillo</td>
+                    <td>150</td>
+                    <td>Unidad mediana (350g)</td>
+                    <td>2.5</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Membrillo, dulce de</td>
+                    <td>20</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-medio">65</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Moras</td>
+                    <td>150</td>
+                    <td>Un puñado, con mano cerrada (20g)</td>
+                    <td>0.15</td>
+                    <td class="IG-bajo">25</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Naranja</td>
+                    <td>100</td>
+                    <td>Unidad mediana (200g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Nectarina</td>
+                    <td>100</td>
+                    <td>Unidad mediana (100g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Níspero</td>
+                    <td>100</td>
+                    <td>Unidad mediana (33g)</td>
+                    <td>0.3</td>
+                    <td class="IG-bajo">55</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Papaya</td>
+                    <td>125</td>
+                    <td>Una tajada (250g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo">55</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Paraguayo</td>
+                    <td>100</td>
+                    <td>Unidad mediana (100g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pera</td>
+                    <td>100</td>
+                    <td>Unidad mediana (200g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Piña</td>
+                    <td>100</td>
+                    <td>2 rodajas (100g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">45</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Piña en conserva</td>
+                    <td>85</td>
+                    <td>2 rodajas (100g)</td>
+                    <td>0.8</td>
+                    <td class="IG-bajo">53</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Piña en su jugo</td>
+                    <td>60</td>
+                    <td>2 rodajas (100g)</td>
+                    <td>1.6</td>
+                    <td class="IG-bajo">50</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Plátano</td>
+                    <td>50</td>
+                    <td>Unidad pequeña (100g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo">50</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Sandía</td>
+                    <td>200</td>
+                    <td>Una tajada grande (200g)</td>
+                    <td>1</td>
+                    <td class="IG-alto">75</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Uva</td>
+                    <td>50</td>
+                    <td>12 unidades (100g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo">45</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2><img style="vertical-align:bottom"
+            src="https://www.fundacionparalasalud.org/upload/hidratos_carbono/6/hortaliza.png" alt=""> &nbsp;<span
+            style="line-height: 80px;">Hortalizas</span></h2>
+    <div class="table-responsive">
+        <table class="table table-bordered hc" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="background-color:#c4bc96;vertical-align:middle">Alimento</th>
+                    <th rowspan="2" style="background-color:#c4bc96;vertical-align:middle">1 ración de HC son (en
+                        gramos)</th>
+                    <th colspan="2" style="border-bottom-width:1px;background-color:#c4bc96;vertical-align:middle">
+                        ¿Cuántas raciones de HC contiene el alimento en su medida habitual de consumo?</th>
+                    <th rowspan="2" style="background-color:#c4bc96;vertical-align:middle">I.G.</th>
+                </tr>
+                <tr>
+                    <th style="background-color:#c4bc96;vertical-align:middle">Medida habitual</th>
+                    <th style="background-color:#c4bc96;vertical-align:middle">Raciones de HC en medida habitual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:left">Acelga</td>
+                    <td>300</td>
+                    <td>Plato grande (250g)</td>
+                    <td>0.8</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Ajo</td>
+                    <td>40</td>
+                    <td>3 dientes (10g)</td>
+                    <td>0.25</td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Alcachofa</td>
+                    <td>300</td>
+                    <td>Plato grande (150g)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo">20</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Alga</td>
+                    <td>200</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Apio</td>
+                    <td>500</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Apio-nabo</td>
+                    <td>500</td>
+                    <td>Guarnición (125g)</td>
+                    <td>0.25</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="2">Berenjena </td>
+                    <td rowspan="2">300</td>
+                    <td>Guarnición (125)</td>
+                    <td>0.4</td>
+                    <td class="IG-bajo" rowspan="2">20</td>
+                </tr>
+                <tr>
+                    <td>Unidad grande (300g)</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Berro</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Berza</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Borraja</td>
+                    <td>300</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Brócoli</td>
+                    <td>300</td>
+                    <td>Plato grande (300g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Calabacín</td>
+                    <td>300</td>
+                    <td>Unidad grande (300g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Calabaza</td>
+                    <td>200</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-alto">75</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cardo</td>
+                    <td>300</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cebolla</td>
+                    <td>150</td>
+                    <td>Unidad mediana (150g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cebolla frita en aros</td>
+                    <td>100</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Champiñón</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Col ácida</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Col de Bruselas, Coliflor</td>
+                    <td>300</td>
+                    <td>Plato grande (300g)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Edamame</td>
+                    <td>100</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Endibia</td>
+                    <td>300</td>
+                    <td>Unidad (100g)</td>
+                    <td>0.3</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Escarola</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Espárrago blanco en conserva</td>
+                    <td>300</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Espárrago verde</td>
+                    <td>500</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Espinaca</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Grelos</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Judía verde</td>
+                    <td>250</td>
+                    <td>Plato grande (250g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Lechuga</td>
+                    <td>300</td>
+                    <td>Ración individual (70g)</td>
+                    <td>0.25</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Lombarda</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Nabo</td>
+                    <td>300</td>
+                    <td>Unidad (100g)</td>
+                    <td>0.3</td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Palmitos</td>
+                    <td>200</td>
+                    <td>Unidad (25g)</td>
+                    <td>0.1</td>
+                    <td class="IG-bajo">20</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pepino</td>
+                    <td>300</td>
+                    <td>Unidad mediana (150g)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pimiento rojo/verde</td>
+                    <td>300</td>
+                    <td>Unidad mediana (150g)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Puerro</td>
+                    <td>300</td>
+                    <td>Unidad mediana (75g)</td>
+                    <td>0.25</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Rábano</td>
+                    <td>300</td>
+                    <td>5 unidades medianas (100g)</td>
+                    <td>0.3</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Remolacha</td>
+                    <td>150</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Repollo</td>
+                    <td>300</td>
+                    <td>Guarnición (125g)</td>
+                    <td>0.4</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Ruibarbo</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Setas</td>
+                    <td>300</td>
+                    <td>Plato grande (200g)</td>
+                    <td>0.7</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Soja en brotes</td>
+                    <td>300</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Tomate</td>
+                    <td>300</td>
+                    <td>Unidad mediana (150g)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Zanahoria</td>
+                    <td>150</td>
+                    <td>Unidad mediana (70g)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Zanahoria en conserva</td>
+                    <td>225</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Zanahoria hervida</td>
+                    <td>200</td>
+                    <td>Unidad mediana (70g)</td>
+                    <td>0.5</td>
+                    <td class="IG-alto">85</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2><img style="vertical-align:bottom"
+            src="https://www.fundacionparalasalud.org/upload/hidratos_carbono/7/frutos.png" alt=""> &nbsp;<span
+            style="line-height: 80px;">Fruta grasa y seca</span></h2>
+    <div class="table-responsive">
+        <table class="table table-bordered hc" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="background-color:#ccc0d9;vertical-align:middle">Alimento</th>
+                    <th rowspan="2" style="background-color:#ccc0d9;vertical-align:middle">1 ración de HC son (en
+                        gramos)</th>
+                    <th colspan="2" style="border-bottom-width:1px;background-color:#ccc0d9;vertical-align:middle">
+                        ¿Cuántas raciones de HC contiene el alimento en su medida habitual de consumo?</th>
+                    <th rowspan="2" style="background-color:#ccc0d9;vertical-align:middle">I.G.</th>
+                </tr>
+                <tr>
+                    <th style="background-color:#ccc0d9;vertical-align:middle">Medida habitual</th>
+                    <th style="background-color:#ccc0d9;vertical-align:middle">Raciones de HC en medida habitual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:left">Aceituna</td>
+                    <td>250</td>
+                    <td>Una tapa (12 unidades o 30g)</td>
+                    <td>0</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Albaricoque seco</td>
+                    <td>15</td>
+                    <td>Unidad (5g)</td>
+                    <td>0.3</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Almendra</td>
+                    <td>150</td>
+                    <td>Un puñado, con mano cerrada (20g)</td>
+                    <td>0.1</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Almendra tostada</td>
+                    <td>140</td>
+                    <td>Un puñado, con mano cerrada (20g)</td>
+                    <td>0.1</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Avellana</td>
+                    <td>150</td>
+                    <td>Un puñado, con mano cerrada (20g)</td>
+                    <td>0.1</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cacahuete</td>
+                    <td>100</td>
+                    <td>Un puñado, con mano cerrada (20g)</td>
+                    <td>0.2</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Ciruela pasa</td>
+                    <td>15</td>
+                    <td>Unidad (8g)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo">40</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Dátil seco</td>
+                    <td>15</td>
+                    <td>Unidad (10g)</td>
+                    <td>0.7</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Higo seco</td>
+                    <td>15</td>
+                    <td>Unidad (8g)</td>
+                    <td>0.5</td>
+                    <td class="IG-bajo">40</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Nuez</td>
+                    <td>300</td>
+                    <td>Un puñado, con mano cerrada (20g)</td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Piñón</td>
+                    <td>300</td>
+                    <td>Un puñado, con mano cerrada (20g)</td>
+                    <td></td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pipas</td>
+                    <td>80</td>
+                    <td>Un puñado, con mano cerrada (15g)</td>
+                    <td>0.2</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pistacho</td>
+                    <td>80</td>
+                    <td>Un puñado, con mano cerrada (20g)</td>
+                    <td>0.2</td>
+                    <td class="IG-bajo">15</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Sésamo</td>
+                    <td>100</td>
+                    <td>Una cucharada sopera rasa (12g)</td>
+                    <td>0.1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Uva pasa</td>
+                    <td>15</td>
+                    <td>Un puñado, con mano cerrada (20g)</td>
+                    <td>1.25</td>
+                    <td class="IG-medio">65</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2><img style="vertical-align:bottom"
+            src="https://www.fundacionparalasalud.org/upload/hidratos_carbono/8/bebidas.png" alt=""> &nbsp;<span
+            style="line-height: 80px;">Bebidas</span></h2>
+    <div class="table-responsive">
+        <table class="table table-bordered hc" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="background-color:#63aecf;vertical-align:middle">Alimento</th>
+                    <th rowspan="2" style="background-color:#63aecf;vertical-align:middle">1 ración de HC son (en
+                        gramos)</th>
+                    <th colspan="2" style="border-bottom-width:1px;background-color:#63aecf;vertical-align:middle">
+                        ¿Cuántas raciones de HC contiene el alimento en su medida habitual de consumo?</th>
+                    <th rowspan="2" style="background-color:#63aecf;vertical-align:middle">I.G.</th>
+                </tr>
+                <tr>
+                    <th style="background-color:#63aecf;vertical-align:middle">Medida habitual</th>
+                    <th style="background-color:#63aecf;vertical-align:middle">Raciones de HC en medida habitual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:left">Agua de coco</td>
+                    <td>200</td>
+                    <td>Vaso de 200cc</td>
+                    <td>1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Bebida de almendra</td>
+                    <td>200</td>
+                    <td>Vaso o brick de 200cc</td>
+                    <td>1</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Bebida de arroz</td>
+                    <td>200</td>
+                    <td>Vaso o brick de 200cc</td>
+                    <td>1</td>
+                    <td class="IG-alto">85</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Bebida de avena</td>
+                    <td>200</td>
+                    <td>Vaso o brick de 200cc</td>
+                    <td>1</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Bebida de cacao</td>
+                    <td>100</td>
+                    <td>Vaso o brick de 200cc</td>
+                    <td>2</td>
+                    <td class="IG-bajo">34</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Bebida de soja</td>
+                    <td>250</td>
+                    <td>Vaso o brick de 200cc</td>
+                    <td>0.8</td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Bebida energética</td>
+                    <td>80</td>
+                    <td>Lata de 250cc</td>
+                    <td>3</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="2">Bebida isotónica</td>
+                    <td rowspan="2">130</td>
+                    <td>Lata de 330cc</td>
+                    <td>2.5</td>
+                    <td class="IG-alto" rowspan="2">78</td>
+                </tr>
+                <tr>
+                    <td>Botella de 500cc</td>
+                    <td>3.8</td>
+                </tr>
+                <tr>
+                    <td style=";text-align:left" rowspan="2">Bebida refrescante de sabores
+                        (4,5% de hidratos de carbono)</td>
+                    <td rowspan="2">200</td>
+                    <td>Vaso de 200cc</td>
+                    <td>1</td>
+                    <td class="IG-alto" rowspan="2">70</td>
+                </tr>
+                <tr>
+                    <td>Lata de 330cc</td>
+                    <td>1.6</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="2">Bebida refrescante tipo cola (10% de hidratos de carbono)
+                    </td>
+                    <td rowspan="2">100</td>
+                    <td>Vaso de 200cc</td>
+                    <td>2</td>
+                    <td class="IG-alto" rowspan="2">70</td>
+                </tr>
+                <tr>
+                    <td>Lata de 330cc</td>
+                    <td>3.3</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Bebida refrescante tipo cola o sabores light o
+                        sin azúcar</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Bitter</td>
+                    <td>100</td>
+                    <td>Vaso o botellín de 200cc</td>
+                    <td>2</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Caldo de pollo o carne</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cava brut</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cava seco o semiseco</td>
+                    <td>250</td>
+                    <td>Copa (100cc)</td>
+                    <td>0.4</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Cerveza</td>
+                    <td rowspan="3">250</td>
+                    <td>Vaso o caña (200cc)</td>
+                    <td>0.8</td>
+                    <td class="IG-alto" rowspan="3">110</td>
+                </tr>
+                <tr>
+                    <td>Tercio o mediana (330cc)</td>
+                    <td>1.3</td>
+                </tr>
+                <tr>
+                    <td>Jarra (500cc)</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td style=";text-align:left" rowspan="3">Cerveza light</td>
+                    <td rowspan="3">300</td>
+                    <td>Vaso o caña (200cc)</td>
+                    <td>0.7</td>
+                    <td rowspan="3"></td>
+                </tr>
+                <tr>
+                    <td>Tercio o mediana (330cc)</td>
+                    <td>1.1</td>
+                </tr>
+                <tr>
+                    <td>Jarra (500cc)</td>
+                    <td>1.7</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Cerveza sin alcohol</td>
+                    <td rowspan="3">250</td>
+                    <td>Vaso o caña (200cc)</td>
+                    <td>0.8</td>
+                    <td class="IG-alto" rowspan="3">110</td>
+                </tr>
+                <tr>
+                    <td>Tercio o mediana (330cc)</td>
+                    <td>1.3</td>
+                </tr>
+                <tr>
+                    <td>Jarra (500cc)</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Destilados (ginebra, whisky, ron, vodka)</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Gaseosa</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Horchata</td>
+                    <td>75</td>
+                    <td>Un vaso (200cc)</td>
+                    <td>2.6</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Horchata light</td>
+                    <td>300</td>
+                    <td>Un vaso (200cc)</td>
+                    <td>0.7</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Licor de melocotón o manzana</td>
+                    <td>30</td>
+                    <td>Un chupito (30cc)</td>
+                    <td>1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Mosto</td>
+                    <td>70</td>
+                    <td>Una copa (100cc)</td>
+                    <td>1.4</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Sangría</td>
+                    <td>100</td>
+                    <td>Un vaso (200cc)</td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Sidra</td>
+                    <td>200</td>
+                    <td>Una copa (100cc)</td>
+                    <td>0.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Tónica</td>
+                    <td>100</td>
+                    <td>Un vaso o botellín (200cc)</td>
+                    <td>2</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Vermut</td>
+                    <td>75</td>
+                    <td>Una copa (100cc)</td>
+                    <td>1.3</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Vino blanco o tinto</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Vino dulce</td>
+                    <td>75</td>
+                    <td>Un chupito (30cc)</td>
+                    <td>0.4</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Zumo de fruta</td>
+                    <td>100</td>
+                    <td>Un vaso o brick (200cc)</td>
+                    <td>2</td>
+                    <td class="IG-medio">60</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Zumo de fruta "sin azúcar añadido"</td>
+                    <td>250</td>
+                    <td>Un vaso o brick (200cc)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">45</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Zumo de tomate</td>
+                    <td>200</td>
+                    <td>Un vaso o brick (200cc)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">35</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2><img style="vertical-align:bottom"
+            src="https://www.fundacionparalasalud.org/upload/hidratos_carbono/9/otros.png" alt=""> &nbsp;<span
+            style="line-height: 80px;">Otros</span></h2>
+    <div class="table-responsive">
+        <table class="table table-bordered hc" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="background-color:#e0c0a0;vertical-align:middle">Alimento</th>
+                    <th rowspan="2" style="background-color:#e0c0a0;vertical-align:middle">1 ración de HC son (en
+                        gramos)</th>
+                    <th colspan="2" style="border-bottom-width:1px;background-color:#e0c0a0;vertical-align:middle">
+                        ¿Cuántas raciones de HC contiene el alimento en su medida habitual de consumo?</th>
+                    <th rowspan="2" style="background-color:#e0c0a0;vertical-align:middle">I.G.</th>
+                </tr>
+                <tr>
+                    <th style="background-color:#e0c0a0;vertical-align:middle">Medida habitual</th>
+                    <th style="background-color:#e0c0a0;vertical-align:middle">Raciones de HC en medida habitual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:left">Arepa</td>
+                    <td>25</td>
+                    <td>Unidad</td>
+                    <td>4</td>
+                    <td class="IG-alto">72</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Azúcar blanco </td>
+                    <td rowspan="3">10</td>
+                    <td>Cucharada postre (8g)</td>
+                    <td>0.8</td>
+                    <td class="IG-alto" rowspan="3">70</td>
+                </tr>
+                <tr>
+                    <td>Sobre (8g)</td>
+                    <td>0.8</td>
+                </tr>
+                <tr>
+                    <td>Cucharada sopera (20g)</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Azúcar moreno</td>
+                    <td rowspan="3">10</td>
+                    <td>Cucharada postre (8g)</td>
+                    <td>0.8</td>
+                    <td class="IG-alto" rowspan="3">70</td>
+                </tr>
+                <tr>
+                    <td>Sobre (8g)</td>
+                    <td>0.8</td>
+                </tr>
+                <tr>
+                    <td>Cucharada sopera (20g)</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Barrita energética (de cereales)</td>
+                    <td>20</td>
+                    <td>Unidad (25g)</td>
+                    <td>1.25</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Bizcocho o melindro</td>
+                    <td>20</td>
+                    <td>Unidad comercial individual (25g)</td>
+                    <td>1.25</td>
+                    <td class="IG-medio">65</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Bollería en general</td>
+                    <td>20</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="2">Cacao en polvo</td>
+                    <td rowspan="2">12</td>
+                    <td>Cucharada postre (8g)</td>
+                    <td>0.7</td>
+                    <td rowspan="2"></td>
+                </tr>
+                <tr>
+                    <td>Cucharada sopera (20g)</td>
+                    <td>1.7</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="2">Cacao en polvo sin azúcar</td>
+                    <td rowspan="2">22</td>
+                    <td>Cucharada postre (8g)</td>
+                    <td>0.4</td>
+                    <td rowspan="2"></td>
+                </tr>
+                <tr>
+                    <td>Cucharada sopera (20g)</td>
+                    <td>0.9</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Calamares a la romana</td>
+                    <td>120</td>
+                    <td>4 unidades</td>
+                    <td>1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Canelones con bechamel</td>
+                    <td>100</td>
+                    <td>3 unidades (250g)</td>
+                    <td>2.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Caramelo</td>
+                    <td>12</td>
+                    <td>Unidad (5g)</td>
+                    <td>0.4</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Carne rebozada</td>
+                    <td>150</td>
+                    <td>Un filete de 100g de carne</td>
+                    <td>0.6</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Chocolate >90% cacao</td>
+                    <td>75</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="2">Chocolate blanco o con leche</td>
+                    <td rowspan="2">17</td>
+                    <td>Pastilla (8g)</td>
+                    <td>0.5</td>
+                    <td class="IG-alto" rowspan="2">70</td>
+                </tr>
+                <tr>
+                    <td>Tableta individual (30g)</td>
+                    <td>1.7</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="2">Chocolate negro </td>
+                    <td rowspan="2">25</td>
+                    <td>Pastilla (8g)</td>
+                    <td>0.3</td>
+                    <td class="IG-bajo" rowspan="2">20</td>
+                </tr>
+                <tr>
+                    <td>Tableta individual (30g)</td>
+                    <td>1.2</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Churros</td>
+                    <td>25</td>
+                    <td>2 unidades (25g)</td>
+                    <td>1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Crema de cacahuete</td>
+                    <td>100</td>
+                    <td>Cucharada sopera colmada (20g)</td>
+                    <td>0.2</td>
+                    <td class="IG-bajo">40</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Crema de cacao</td>
+                    <td>25</td>
+                    <td>Cucharada sopera colmada (25g)</td>
+                    <td>1</td>
+                    <td class="IG-bajo">55</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Crema pastelera</td>
+                    <td>40</td>
+                    <td>Cucharada sopera colmada (20g)</td>
+                    <td>0.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Crepe</td>
+                    <td>40</td>
+                    <td>Unidad (75g)</td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Croquetas</td>
+                    <td>50</td>
+                    <td>3 unidades (90g)</td>
+                    <td>1.8</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Cruasán</td>
+                    <td>20</td>
+                    <td>Unidad (60g)</td>
+                    <td>3</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Döner kebab</td>
+                    <td>60</td>
+                    <td>Unidad</td>
+                    <td>6</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Donut</td>
+                    <td>23</td>
+                    <td>Unidad (58g)</td>
+                    <td>2.5</td>
+                    <td class="IG-alto">75</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Durum</td>
+                    <td>100</td>
+                    <td>Unidad</td>
+                    <td>4</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Empanadilla de carne</td>
+                    <td>50</td>
+                    <td>2 unidades (80g)</td>
+                    <td>1.6</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Ensaimada</td>
+                    <td>23</td>
+                    <td>Unidad (70g)</td>
+                    <td>3</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Ensaladilla rusa</td>
+                    <td>100</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Fajita, tortilla mejicana</td>
+                    <td>20</td>
+                    <td>Unidad comercial (40g)</td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Fructosa (edulcorante)</td>
+                    <td>10</td>
+                    <td>Cucharada sopera (20g)</td>
+                    <td>2</td>
+                    <td class="IG-bajo">20</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Gazpacho comercial</td>
+                    <td>150</td>
+                    <td>Vaso (200cc)</td>
+                    <td>1.3</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Gelatina 0%</td>
+                    <td>500</td>
+                    <td>Unidad (125cc)</td>
+                    <td>0.2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Gelatina comercial</td>
+                    <td>62</td>
+                    <td>Unidad (125cc)</td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="4">Glucosa (líquida o en pastillas)</td>
+                    <td rowspan="4">10</td>
+                    <td>Pastilla pequeña (2,5g)</td>
+                    <td>0.25</td>
+                    <td class="IG-alto" rowspan="4">100</td>
+                </tr>
+                <tr>
+                    <td>Pastilla normal (5g)</td>
+                    <td>0.5</td>
+                </tr>
+                <tr>
+                    <td>Gel hipoglucemia</td>
+                    <td>1.5</td>
+                </tr>
+                <tr>
+                    <td>Gel deporte (40g)</td>
+                    <td>2.5</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Golosinas</td>
+                    <td>18</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Ketchup</td>
+                    <td>50</td>
+                    <td>Sobre (9g)</td>
+                    <td>0.2</td>
+                    <td class="IG-bajo">55</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Lasaña</td>
+                    <td>100</td>
+                    <td>Plato restaurante (260g)</td>
+                    <td>2.7</td>
+                    <td class="IG-bajo">53</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Levadura</td>
+                    <td>130</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Magdalena</td>
+                    <td>25</td>
+                    <td>Unidad (50g)</td>
+                    <td>2</td>
+                    <td class="IG-alto">70</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Mazapán</td>
+                    <td>25</td>
+                    <td>Unidad (35g)</td>
+                    <td>1.4</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Merengue</td>
+                    <td>11</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Mermelada</td>
+                    <td>20</td>
+                    <td>Cucharada sopera (25g)</td>
+                    <td>1.25</td>
+                    <td class="IG-medio">65</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Mermelada light</td>
+                    <td>100</td>
+                    <td>Cucharada sopera (25g)</td>
+                    <td>0.25</td>
+                    <td class="IG-bajo">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Miel</td>
+                    <td>13</td>
+                    <td>Cucharada sopera (18g)</td>
+                    <td></td>
+                    <td class="IG-alto">85</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Mostaza</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Palomitas</td>
+                    <td>20</td>
+                    <td></td>
+                    <td></td>
+                    <td class="IG-alto">85</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pastel de chocolate</td>
+                    <td>25</td>
+                    <td>Porción (100g)</td>
+                    <td>4</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pastel de crema</td>
+                    <td>35</td>
+                    <td>Porción (100g)</td>
+                    <td>2.8</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Pepinillos en vinagre</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left" rowspan="3">Pizza</td>
+                    <td rowspan="3">40</td>
+                    <td>Pizza individual (400g)</td>
+                    <td>10</td>
+                    <td class="IG-bajo" rowspan="3">45</td>
+                </tr>
+                <tr>
+                    <td>Triángulo (100g o 1/4 parte de pizza)</td>
+                    <td>2.5</td>
+                </tr>
+                <tr>
+                    <td>Media pizza (200g)</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Regaliz</td>
+                    <td>15</td>
+                    <td>Unidad (8g)</td>
+                    <td>0.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Rollito de primavera</td>
+                    <td>50</td>
+                    <td>2 unidades (100g)</td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Salsa barbacoa</td>
+                    <td>100</td>
+                    <td>3 cucharadas soperas (50g)</td>
+                    <td>0.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Salsa bechamel</td>
+                    <td>100</td>
+                    <td>3 cucharadas soperas (50g)</td>
+                    <td>0.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Salsa boloñesa</td>
+                    <td>150</td>
+                    <td>5 cucharadas soperas (75g)</td>
+                    <td>0.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Salsa carbonara</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Salsa de soja</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Salsa de tomate comercial</td>
+                    <td>100</td>
+                    <td>3 cucharadas soperas (50g)</td>
+                    <td>0.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Seitán</td>
+                    <td>300</td>
+                    <td>Porción (100g)</td>
+                    <td>0.3</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Sucedáneo de café, tipo EKO</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Surimi (palitos de cangrejo)</td>
+                    <td>100</td>
+                    <td>Barrita (20g)</td>
+                    <td>0.2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Tarta de manzana</td>
+                    <td>25</td>
+                    <td>Porción (100g)</td>
+                    <td>4</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Tofú</td>
+                    <td>300</td>
+                    <td>Porción (100g)</td>
+                    <td>0.3</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Tortilla de patatas</td>
+                    <td>120</td>
+                    <td>Tapa (100g)</td>
+                    <td>1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Turrón tipo Alicante</td>
+                    <td>25</td>
+                    <td>1/6 tableta (50g)</td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Turrón tipo chocolate</td>
+                    <td>20</td>
+                    <td>1/6 de tableta (50g)</td>
+                    <td>2.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Turrón tipo Jijona</td>
+                    <td>25</td>
+                    <td>1/6 tableta (50g)</td>
+                    <td>2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Vinagre</td>
+                    <td>No valorable</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align:left">Vinagre tipo Módena (caramelizado)</td>
+                    <td>15</td>
+                    <td>Cucharada sopera (15g)</td>
+                    <td>1</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="alert alert-info">10 GRAMOS DE HIDRATOS DE CARBONO (HC) = 1 RACIÓN DE HC</div>
+    <div class="alert alert-info">I.G. = ÍNDICE GLUCÉMICO DE CADA ALIMENTO
+        <ul>
+            <li>ROJO: Elevado (70 o más)</li>
+            <li>NARANJA: Moderado (56-69)</li>
+            <li>VERDE: Bajo (55 o menos)</li>
+        </ul>
+        Los alimentos que en la tabla aparecen sin ningún valor en la casilla de I.G. es porque se desconoce la
+        información de ese alimento en cuestión.
+    </div>
+
+</body>
+
+</html>
