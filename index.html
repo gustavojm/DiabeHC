@@ -2642,7 +2642,7 @@
         </table>
     </div>
 
-    <div class="alert alert-info">10 GRAMOS DE HIDRATOS DE CARBONO (HC) = 1 RACIÓN DE HC</div>
+    <div class="alert alert-info">15 GRAMOS DE HIDRATOS DE CARBONO (HC) = 1 RACIÓN DE HC</div>
 
     <div class="alert alert-info">I.G. = ÍNDICE GLUCÉMICO DE CADA ALIMENTO
         <ul>
@@ -2698,6 +2698,81 @@
         });
     }
 
+    function extractNumber(text) {
+        // Remove currency symbols, commas, and other non-numeric characters
+        const cleaned = text.replace(/[$,£€¥₹]/g, '').trim();
+        const number = parseFloat(cleaned);
+        return isNaN(number) ? null : number;
+    }
+
+    function formatNumber(number, originalText) {
+        // Determine the original format and apply it to the new number
+        const hasCommas = originalText.includes(',');
+        const hasDollarSign = originalText.includes('$');
+        const hasOtherCurrency = /[£€¥₹]/.test(originalText);
+
+        let formatted = number.toString();
+
+        // Add commas for thousands separator if original had them
+        if (hasCommas && number >= 1000) {
+            formatted = number.toLocaleString();
+        }
+
+        // Add currency symbol back
+        if (hasDollarSign) {
+            formatted = '$' + formatted;
+        } else if (hasOtherCurrency) {
+            const currencyMatch = originalText.match(/[£€¥₹]/);
+            if (currencyMatch) {
+                formatted = currencyMatch[0] + formatted;
+            }
+        }
+
+        return formatted;
+    }
+
+    function normalize(factor) {
+
+        const tables = [document.getElementById('table_lacteos'), 
+                        document.getElementById('table_cereales'), 
+                        document.getElementById('table_frutas'), 
+                        document.getElementById('table_hortalizas'), 
+                        document.getElementById('table_frutos'), 
+                        document.getElementById('table_bebidas'),
+                        document.getElementById('table_otros')
+                       ];
+
+        tables.forEach(table => {
+            const rows = table.querySelectorAll('tbody tr');
+
+            rows.forEach(row => {
+                // Process 2nd cell (index 1) and 4th cell (index 3)
+                [1, 3].forEach(cellIndex => {
+                    if (row.cells[cellIndex]) {
+                        const cell = row.cells[cellIndex];
+                        const originalText = cell.textContent;
+                        const number = extractNumber(originalText);
+
+                        if (number !== null) {
+                            console.log(cellIndex);
+                            if (cellIndex == 1) {
+                                multipliedNumber = Math.round(number * factor);
+                            }
+
+                            if (cellIndex == 3) {
+                                multipliedNumber = Math.round(number / factor * 10) / 10; // Round to 1 decimal places
+                            }
+
+                            const formattedNumber = formatNumber(multipliedNumber, originalText);
+                            cell.textContent = formattedNumber;
+                        }
+                    }
+                });
+            });
+        });
+
+    }
+
     // Initialize highlighting on page load
     document.addEventListener('DOMContentLoaded', function () {
         highlightAlternateVisualRows('table_lacteos', '#b8cce4');
@@ -2707,6 +2782,8 @@
         highlightAlternateVisualRows('table_frutos', '#e5dfec');
         highlightAlternateVisualRows('table_bebidas', '#c2dfec');
         highlightAlternateVisualRows('table_otros', '#eddbc9');
+
+        normalize(15/10);
 
     });
 </script>
