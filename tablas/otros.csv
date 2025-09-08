@@ -1,6 +1,6 @@
 Arepa;25;Unidad;40;72
 Azúcar blanco;10;Cucharada postre (8g);8;70
-Azúcar blanco;10;Sobre (8g);8;70
+Azúcar blanco;10;2 sobr. /1 cuch. sopera/ 3 cuch. Té;15;70
 Azúcar blanco;10;Cucharada sopera (20g);20;70
 Azúcar moreno;10;Cucharada postre (8g);8;70
 Azúcar moreno;10;Sobre (8g);8;70
@@ -49,9 +49,9 @@ Levadura;130;;;
 Magdalena;25;Unidad (50g);20;70
 Mazapán;25;Unidad (35g);14;
 Merengue;11;;;
-Mermelada;20;Cucharada sopera (25g);13;65
-Mermelada light;100;Cucharada sopera (25g);3;30
-Miel;13;Cucharada sopera (18g);;85
+Mermelada;20;Cucharada sopera al ras (25g);15;65
+Mermelada light;100;3 Cucharadas soperas al ras;15;30
+Miel;13;Cucharada sopera (18g);15;85
 Mostaza;No valorable;;;
 Palomitas;20;;;85
 Pastel de chocolate;25;Porción (100g);40;
@@ -78,10 +78,14 @@ Turrón tipo chocolate;20;1/6 de tableta (50g);25;
 Turrón de almendras;25;1/6 tableta (50g);20;
 Vinagre;No valorable;;;
 Aceto balsámico;15;Cucharada sopera (15g);10;
-Empanada árabe;; 1 unidad;30;
-Humita en chala;; 1 unidad;30;
-Humita;; 1 porcion de 150g;30;
+Empanada árabe;;1 unidad;30;
+Humita en chala;;1 unidad;30;
+Humita;;1 porcion de 150g;30;
 Locro 1 plato hondo;;75;;
-Sushi roll;; 3 unidades;15;
-Chipa;; 1 unidad pequeña;15;
-Tamal;; 1 unidad;15;
+Sushi roll;;3 unidades;15;
+Chipa;;1 unidad pequeña;15;
+Tamal;;1 unidad;15;
+Dulce de leche común;;2 cdas tipo postre;15;
+Dulce de leche diet Ser;;2 cdas tipo postre;15;
+Dulce de membrillo o batata común;;1 rebanada fina (25 gr);15;
+Dulce de membrillo/ batata dietético;;1 porción (70 gr);15;
