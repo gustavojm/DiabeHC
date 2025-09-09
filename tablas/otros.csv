@@ -7,7 +7,6 @@ Azúcar moreno;10;Sobre (8g);8;70
 Azúcar moreno;10;Cucharada sopera (20g);20;70
 Barrita energética (de cereales);20;Unidad (25g);13;70
 Masita vainilla;20;Unidad comercial individual (25g);13;65
-Bollería en general;20;;;70
 Cacao en polvo;12;Cucharada postre (8g);7;
 Cacao en polvo;12;Cucharada sopera (20g);17;
 Cacao en polvo sin azúcar;22;Cucharada postre (8g);4;
@@ -72,7 +71,7 @@ Seitán;300;Porción (100g);3;
 Sucedáneo de café;No valorable;;;
 Tarta de manzana;25;Porción (100g);40;
 Tofú;300;Porción (100g);3;
-Tortilla de papas;120;Tapa (100g);10;
+Tortilla de papas;120;⅛ (100g);10;
 Turrón de maní navideño;25;1/6 tableta (50g);20;
 Turrón tipo chocolate;20;1/6 de tableta (50g);25;
 Turrón de almendras;25;1/6 tableta (50g);20;
@@ -81,11 +80,11 @@ Aceto balsámico;15;Cucharada sopera (15g);10;
 Empanada árabe;;1 unidad;30;
 Humita en chala;;1 unidad;30;
 Humita;;1 porcion de 150g;30;
-Locro 1 plato hondo;;75;;
+Locro;;1 plato hondo;75;
 Sushi roll;;3 unidades;15;
 Chipa;;1 unidad pequeña;15;
 Tamal;;1 unidad;15;
 Dulce de leche común;;2 cdas tipo postre;15;
 Dulce de leche diet Ser;;2 cdas tipo postre;15;
 Dulce de membrillo o batata común;;1 rebanada fina (25 gr);15;
-Dulce de membrillo/ batata dietético;;1 porción (70 gr);15;
+Dulce de membrillo o batata dietético;;1 porción (70 gr);15;
