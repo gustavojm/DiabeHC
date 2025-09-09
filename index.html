@@ -22,36 +22,6 @@
 
     <script type="text/javascript" src="scripts/papaparse.min.js"></script>
 
-    <style>
-        #table_lacteos tbody tr.odd {
-            background-color: #b8cce4;
-        }
-
-        #table_cereales tbody tr.odd {
-            background-color: #fde9d9;
-        }
-
-        #table_frutas tbody tr.odd {
-            background-color: #f2dbdb;
-        }
-
-        #table_hortalizas tbody tr.odd {
-            background-color: #ddd9c3;
-        }
-
-        #table_frutos tbody tr.odd {
-            background-color: #e5dfec;
-        }
-
-        #table_bebidas tbody tr.odd {
-            background-color: #c2dfec;
-        }
-
-        #table_otros tbody tr.odd {
-            background-color: #eddbc9;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -62,305 +32,196 @@
         <input type="text" placeholder="" id="search_box">
     </p>
 
-    <div>
-        <h2><img style="vertical-align:bottom" src="img/lacteos.png" alt=""> &nbsp;<span
-                style="line-height: 80px;">Lácteos</span></h2>
-        <div class="table-responsive">
-            <table id="table_lacteos" class="table table-bordered hc" style="border-collapse: collapse; ">
-                <thead style="background-color:#95b3d7; vertical-align:middle; text-align: center;">
-                    <tr>
-                        <th rowspan="2">Alimento</th>
-                        <th rowspan="2">1 ración de HC son (en gramos)</th>
-                        <th colspan="2">¿Cuántos gramos de HC contiene el alimento en su medida habitual de consumo?
-                        </th>
-                        <th rowspan="2">I.G.</th>
-                    </tr>
-                    <tr>
-                        <th>Medida habitual</th>
-                        <th>Gramos de HC en medida habitual</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
-
-    <div>
-        <h2><img style="vertical-align:bottom" src="img/cereales.png" alt=""> &nbsp;<span
-                style="line-height: 80px;">Cereales y derivados, harinas, legumbres y tubérculos</span></h2>
-        <div class="table-responsive">
-            <table id="table_cereales" class="table table-bordered hc" style="border-collapse: collapse;">
-                <thead style="background-color:#fabf8f; vertical-align:middle; text-align: center;">
-                    <tr>
-                        <th rowspan="2">Alimento</th>
-                        <th rowspan="2">1 ración de HC son (en gramos)</th>
-                        <th colspan="2">¿Cuántos gramos de HC contiene el alimento en su medida habitual de consumo?
-                        </th>
-                        <th rowspan="2">I.G.</th>
-                    </tr>
-                    <tr>
-                        <th>Medida habitual</th>
-                        <th>Gramos de HC en medida habitual</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
-
-    <div>
-        <h2><img style="vertical-align:bottom" src="img/fruta.png" alt=""> &nbsp;<span
-                style="line-height: 80px;">Frutas</span></h2>
-        <div class="table-responsive">
-            <table id="table_frutas" class="table table-bordered hc" style="border-collapse: collapse;">
-                <thead style="background-color:#d99594; vertical-align:middle; text-align: center;">
-                    <tr>
-                        <th rowspan="2">Alimento</th>
-                        <th rowspan="2">1 ración de HC son (en gramos)</th>
-                        <th colspan="2">¿Cuántos gramos de HC contiene el alimento en su medida habitual de consumo?
-                        </th>
-                        <th rowspan="2">I.G.</th>
-                    </tr>
-                    <tr>
-                        <th>Medida habitual</th>
-                        <th>Gramos de HC en medida habitual</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
-
-    <div>
-        <h2><img style="vertical-align:bottom" src="img/hortaliza.png" alt=""> &nbsp;<span
-                style="line-height: 80px;">Hortalizas</span></h2>
-        <div class="table-responsive">
-            <table id="table_hortalizas" class="table table-bordered hc" style="border-collapse: collapse;">
-                <thead style="background-color:#c4bc96; vertical-align:middle; text-align: center;">
-                    <tr>
-                        <th rowspan="2">Alimento</th>
-                        <th rowspan="2">1 ración de HC son (en gramos)</th>
-                        <th colspan="2">¿Cuántos gramos de HC contiene el alimento en su medida habitual de consumo?
-                        </th>
-                        <th rowspan="2">I.G.</th>
-                    </tr>
-                    <tr>
-                        <th>Medida habitual</th>
-                        <th>Gramos de HC en medida habitual</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
-
-    <div>
-        <h2><img style="vertical-align:bottom" src="img/bebidas.png" alt=""> &nbsp;<span
-                style="line-height: 80px;">Bebidas</span></h2>
-        <div class="table-responsive">
-            <table id="table_bebidas" class="table table-bordered hc" style="border-collapse: collapse;">
-                <thead style="background-color:#63aecf; vertical-align:middle; text-align: center;">
-                    <tr>
-                        <th rowspan="2">Alimento</th>
-                        <th rowspan="2">1 ración de HC son (en gramos)</th>
-                        <th colspan="2">¿Cuántos gramos de HC contiene el alimento en su medida habitual de consumo?
-                        </th>
-                        <th rowspan="2">I.G.</th>
-                    </tr>
-                    <tr>
-                        <th>Medida habitual</th>
-                        <th>Gramos de HC en medida habitual</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
-
-    <div>
-        <h2><img style="vertical-align:bottom" src="img/otros.png" alt=""> &nbsp;<span
-                style="line-height: 80px;">Otros</span></h2>
-        <div class="table-responsive">
-            <table id="table_otros" class="table table-bordered hc" style="border-collapse: collapse;">
-                <thead style="background-color:#e0c0a0; vertical-align:middle; text-align: center;">
-                    <tr>
-                        <th rowspan="2">Alimento</th>
-                        <th rowspan="2">1 ración de HC son (en gramos)</th>
-                        <th colspan="2">¿Cuántos gramos de HC contiene el alimento en su medida habitual de consumo?
-                        </th>
-                        <th rowspan="2">I.G.</th>
-                    </tr>
-                    <tr>
-                        <th>Medida habitual</th>
-                        <th>Gramos de HC en medida habitual</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
-
-    <div class="alert alert-info">I.G. = ÍNDICE GLUCÉMICO DE CADA ALIMENTO
-        <ul>
-            <li>ROJO: Elevado (70 o más)</li>
-            <li>NARANJA: Moderado (56-69)</li>
-            <li>VERDE: Bajo (55 o menos)</li>
-        </ul>
-        Los alimentos que en la tabla aparecen sin ningún valor en la casilla de I.G. es porque se desconoce la
-        información de ese alimento en cuestión.
-    </div>
-
 </body>
 
 <script>
-    function extractNumber(text) {
-        // Remove currency symbols, commas, and other non-numeric characters
-        const cleaned = text.replace(/[$,£€¥₹]/g, '').trim();
-        const number = parseFloat(cleaned);
-        return isNaN(number) ? null : number;
-    }
-
-    function formatNumber(number, originalText) {
-        // Determine the original format and apply it to the new number
-        const hasCommas = originalText.includes(',');
-        const hasDollarSign = originalText.includes('$');
-        const hasOtherCurrency = /[£€¥₹]/.test(originalText);
-
-        let formatted = number.toString();
-
-        // Add commas for thousands separator if original had them
-        if (hasCommas && number >= 1000) {
-            formatted = number.toLocaleString();
-        }
-
-        // Add currency symbol back
-        if (hasDollarSign) {
-            formatted = '$' + formatted;
-        } else if (hasOtherCurrency) {
-            const currencyMatch = originalText.match(/[£€¥₹]/);
-            if (currencyMatch) {
-                formatted = currencyMatch[0] + formatted;
-            }
-        }
-
-        return formatted;
-    }
-
-    function normalize(table) {
-        const rows = table.querySelectorAll('tbody tr');
-
-        rows.forEach(row => {
-            [3].forEach(cellIndex => {
-                if (row.cells[cellIndex]) {
-                    const cell = row.cells[cellIndex];
-                    const originalText = cell.textContent;
-                    const number = extractNumber(originalText);
-
-                    if (number !== null) {
-                        multipliedNumber = Math.round(number * 10);
-                        cell.textContent = formatNumber(multipliedNumber, originalText);
-                    }
-                }
-            });
-        });
-    }
-
     $(function () {
+        const CSVs = [
+            { csv: 'lacteos', name: 'Lácteos', header: '#b8cce4', altRow: 'b8cce4' },
+            { csv: 'cereales', name: 'Cereales y derivados, harinas, legumbres y tubérculos', header: '#fde9d9', altRow: '#fde9d9' },
+            { csv: 'frutas', name: 'Frutas', header: '#f2dbdb', altRow: '#f2dbdb' },
+            { csv: 'hortalizas', name: 'Hortalizas', header: '#ddd9c3', altRow: '#ddd9c3' },
+            { csv: 'bebidas', name: 'Bebidas', header: '#c2dfec', altRow: '#c2dfec' },
+            { csv: 'dulces', name: 'Dulces', header: '#95B3D7', altRow: '#DCE6F1' },
+            { csv: 'frutos', name: 'Fruta grasa y seca', header: '#e5dfec', altRow: '#e5dfec' },
+            { csv: 'pastas', name: 'Pastas', header: '#95B3D7', altRow: '#DCE6F1' },
+            { csv: 'pasteleria', name: 'Pastelería', header: '#95B3D7', altRow: '#DCE6F1' },
+            { csv: 'otros', name: 'Otros', header: '#eddbc9', altRow: '#eddbc9' },
 
-        CSVs = ['bebidas', 'dulces', 'frutos', 'lacteos', 'pastas', 'cereales', 'frutas', 'hortalizas', 'otros', 'pasteleria']
+        ]
 
-        $.each(CSVs, function (index, csv) {
-            // Parse local CSV file
-            Papa.parse(
-                "tablas/" + csv + ".csv",
-                {
-                    download: true,
-                    header: false,
-                    skipEmptyLines: 'greedy',
-                    complete: function (results) {
-                        $("#table_" + csv).DataTable({
-                            dom: '<"top"i>rt<"bottom">p<"clear">',
-                            responsive: true,
-                            data: results.data,
-                            columnDefs: [
-                                {
-                                    "targets": 4, // Target the column index you want to style (e.g., 3rd column)
-                                    "createdCell": function (td, cellData, rowData, row, col) {
-                                        if (cellData == "") {
-                                            $(td).css('background-color', 'white');
+        // Function to create table structure
+        function createTableStructure(category) {
+            return `
+            <div>
+                <h2>
+                    <img style="vertical-align:bottom" src="img/${category.csv}.png" alt=""> 
+                    &nbsp;<span style="line-height: 80px;">${category.name}</span>
+                </h2>
+                <div class="table-responsive">
+                    <table id="table_${category.csv}" class="table table-bordered hc" style="border-collapse: collapse;">
+                        <thead style="background-color:${category.header}; vertical-align:middle; text-align: center; color: white;">
+                            <tr>
+                                <th rowspan="2">Alimento</th>
+                                <th rowspan="2">1 ración de HC son (en gramos)</th>
+                                <th colspan="2">¿Cuántos gramos de HC contiene el alimento en su medida habitual de consumo?</th>
+                                <th rowspan="2">I.G.</th>
+                            </tr>
+                            <tr>
+                                <th>Medida habitual</th>
+                                <th>Gramos de HC en medida habitual</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <style>
+                    #table_${category.csv} tbody tr:nth-child(even) {
+                        background-color: ${category.altRow} !important;
+                    }
+                    #table_${category.csv} tbody tr:nth-child(odd) {
+                        background-color: white !important;
+                    }
+                    #table_${category.csv} tbody tr:hover {
+                        background-color: ${category.header}33 !important;
+                    }
+                </style>
+            </div>
+        `;
+        }
+
+        $.each(CSVs, function (index, category) {
+            // Create and append the table structure to the page
+            const tableHTML = createTableStructure(category);
+            $('body').append(tableHTML); // Or append to a specific container like $('#tables-container')
+
+            // Parse CSV file and populate the table
+            Papa.parse("tablas/" + category.csv + ".csv", {
+                download: true,
+                header: false,
+                skipEmptyLines: 'greedy',
+                complete: function (results) {
+                    // Remove header row from data if it exists
+                    const data = results.data.slice(1); // Assuming first row is headers
+
+                    $("#table_" + category.csv).DataTable({
+                        dom: '<"top"i>rt<"bottom">p<"clear">',
+                        responsive: true,
+                        data: data,
+                        columns: [
+                            { title: "Alimento" },
+                            { title: "1 ración de HC (g)" },
+                            { title: "Medida habitual" },
+                            { title: "Gramos de HC en medida habitual" },
+                            { title: "I.G." }
+                        ],
+                        columnDefs: [
+                            {
+                                "targets": 4, // Glycemic Index column
+                                "createdCell": function (td, cellData, rowData, row, col) {
+                                    if (cellData == "" || cellData == null) {
+                                        $(td).css('background-color', 'white');
+                                    } else {
+                                        const gi = parseFloat(cellData);
+                                        if (gi < 55) {
+                                            $(td).css('background-color', '#92d050'); // Green - Low GI
+                                        } else if (gi >= 70) {
+                                            $(td).css('background-color', '#ff5050'); // Red - High GI
                                         } else {
-                                            if (cellData < 55) {
-                                                $(td).css('background-color', '#92d050');
-                                            } else if (cellData >= 70) {
-                                                $(td).css('background-color', '#ff5050');
-                                            } else {
-                                                $(td).css('background-color', '#f3b10d');
-                                            }
-
+                                            $(td).css('background-color', '#f3b10d'); // Yellow - Medium GI
                                         }
                                     }
                                 }
-                            ]
-
-                        });
-                    }
-                });
-        }
-        );
-
-
-        const tables = $('.table');
-        $.each(tables, function () {
-            normalize(this);
-        });
-
-        // var datatables = tables.DataTable({
-        // dom: '<"top"i>rt<"bottom">p<"clear">',
-        // columnDefs: [
-        // { visible: false, targets: [1] }
-        // ],
-        // responsive : true,
-        // data : results.data,
-        // language : {
-        //     "decimal" : "",
-        //     "emptyTable" : "No hay datos en la tabla",
-        //     "info" : "Mostrando _START_ a _END_ de _TOTAL_ entradas",
-        //     "infoEmpty" : "Mostrando 0 a 0 de 0 entradas",
-        //     "infoFiltered" : "(filtrado de _MAX_ entradas totales)",
-        //     "infoPostFix" : "",
-        //     "thousands" : ",",
-        //     "lengthMenu" : "Mostrar _MENU_ entradas",
-        //     "loadingRecords" : "Cargando...",
-        //     "processing" : "",
-        //     "search" : "Buscar:",
-        //     "zeroRecords" : "No se encontraron registros",
-        //     "paginate" : {
-        //         "first" : "Primero",
-        //         "last" : "Último",
-        //         "next" : "Siguiente",
-        //         "previous" : "Previo"
-        //     },
-        //     "aria" : {
-        //         "sortAscending" : ": ordenar ascendente",
-        //         "sortDescending" : ": ordenar descendente"
-        //     }
-        // }
-
-        // });
-
-
-        $('#search_box').on('keyup click', function () {
-            var searchValue = $(this).val();
-            datatables.tables().search($(this).val()).draw();
-
-            // Hide/show tables based on filtered results
-            $('.table').each(function () {
-                var table = $(this).DataTable();
-                var filteredCount = table.rows({ filter: 'applied' }).count();
-
-                if (filteredCount === 0 && searchValue.trim() !== '') {
-                    $(table.table().container()).parent().parent().hide();
-                } else {
-                    $(table.table().container()).parent().parent().show();
+                            }
+                        ]
+                    });
+                },
+                error: function (error) {
+                    console.error("Error loading CSV for " + category.csv + ":", error);
                 }
             });
         });
 
+        // Global search functionality - initialize after all tables are created
+        setTimeout(function () {
+            // Store all DataTable instances for global search
+            var allTables = [];
+
+            // Collect all DataTable instances
+            CSVs.forEach(function (category) {
+                var table = $("#table_" + category.csv).DataTable();
+                if (table) {
+                    allTables.push(table);
+                }
+            });
+
+            // Global search functionality
+            $('#search_box').on('keyup click', function () {
+                var searchValue = $(this).val();
+
+                // Search across all tables
+                allTables.forEach(function (table) {
+                    table.search(searchValue).draw();
+                });
+
+                // Hide/show table containers based on filtered results
+                allTables.forEach(function (table) {
+                    var filteredCount = table.rows({ filter: 'applied' }).count();
+                    var tableContainer = $(table.table().container()).closest('div').parent().parent();
+
+                    if (filteredCount === 0 && searchValue.trim() !== '') {
+                        tableContainer.hide();
+                    } else {
+                        tableContainer.show();
+                    }
+                });
+            });
+
+            console.log("Global search initialized for " + allTables.length + " tables");
+        }, 1000); // Wait 1 second for all tables to be fully initialized
     });
+
+
+
+    // const tables = $('.table');
+    // $.each(tables, function () {
+    //     normalize(this);
+    // });
+
+    // var datatables = tables.DataTable({
+    // dom: '<"top"i>rt<"bottom">p<"clear">',
+    // columnDefs: [
+    // { visible: false, targets: [1] }
+    // ],
+    // responsive : true,
+    // data : results.data,
+    // language : {
+    //     "decimal" : "",
+    //     "emptyTable" : "No hay datos en la tabla",
+    //     "info" : "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+    //     "infoEmpty" : "Mostrando 0 a 0 de 0 entradas",
+    //     "infoFiltered" : "(filtrado de _MAX_ entradas totales)",
+    //     "infoPostFix" : "",
+    //     "thousands" : ",",
+    //     "lengthMenu" : "Mostrar _MENU_ entradas",
+    //     "loadingRecords" : "Cargando...",
+    //     "processing" : "",
+    //     "search" : "Buscar:",
+    //     "zeroRecords" : "No se encontraron registros",
+    //     "paginate" : {
+    //         "first" : "Primero",
+    //         "last" : "Último",
+    //         "next" : "Siguiente",
+    //         "previous" : "Previo"
+    //     },
+    //     "aria" : {
+    //         "sortAscending" : ": ordenar ascendente",
+    //         "sortDescending" : ": ordenar descendente"
+    //     }
+    // }
+
+    // });
+
 
 
 </script>
