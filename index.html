@@ -66,7 +66,7 @@
                         <thead style="background-color:${category.header}; vertical-align:middle; text-align: center; color: white;">
                             <tr>
                                 <th rowspan="2">Alimento</th>
-                                <th rowspan="2">1 ración de HC son (en gramos)</th>
+                                <th rowspan="2" class="d-none d-lg-table-cell">1 ración de HC son (en gramos)</th>
                                 <th colspan="2">¿Cuántos gramos de HC contiene el alimento en su medida habitual de consumo?</th>
                                 <th rowspan="2">I.G.</th>
                             </tr>
@@ -111,14 +111,13 @@
                         dom: '<"top"i>rt<"bottom">p<"clear">',
                         responsive: true,
                         data: data,
-                        columns: [
-                            { title: "Alimento" },
-                            { title: "1 ración de HC (g)" },
-                            { title: "Medida habitual" },
-                            { title: "Gramos de HC en medida habitual" },
-                            { title: "I.G." }
-                        ],
                         columnDefs: [
+                            {
+                                "targets": 2, // Glycemic Index column
+                                "createdCell": function (td, cellData, rowData, row, col) {
+                                    $(td).addClass("d-none d-lg-table-cell"); // Bootstrap Hide
+                                }
+                            },
                             {
                                 "targets": 4, // Glycemic Index column
                                 "createdCell": function (td, cellData, rowData, row, col) {
@@ -135,7 +134,7 @@
                                         }
                                     }
                                 }
-                            }
+                            }                            
                         ]
                     });
                 },
