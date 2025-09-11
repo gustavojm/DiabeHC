@@ -45,7 +45,6 @@
             { csv: 'frutas', name: 'Frutas', header: '#f2dbdb', altRow: '#f2dbdb' },
             { csv: 'hortalizas', name: 'Hortalizas', header: '#ddd9c3', altRow: '#ddd9c3' },
             { csv: 'bebidas', name: 'Bebidas', header: '#c2dfec', altRow: '#c2dfec' },
-            { csv: 'dulces', name: 'Dulces', header: '#de7d09', altRow: '#de7d09' },
             { csv: 'frutos', name: 'Fruta grasa y seca', header: '#e5dfec', altRow: '#e5dfec' },
             { csv: 'pastas', name: 'Pastas', header: '#dbafdb', altRow: '#dbafdb' },
             { csv: 'pasteleria', name: 'Pastelería', header: '#c95959', altRow: '#c95959' },
@@ -57,8 +56,9 @@
         function createTableStructure(category) {
             return `
             <div>
+                <p>
                 <h2>
-                    <img style="vertical-align:bottom" src="img/${category.csv}.png" alt=""> 
+                    <img style="vertical-align:bottom; height: 80px; width:80px;" src="img/${category.csv}.png" alt=""> 
                     &nbsp;<span style="line-height: 80px;">${category.name}</span>
                 </h2>
                 <div class="table-responsive">
@@ -179,7 +179,6 @@
                 });
             });
 
-            console.log("Global search initialized for " + allTables.length + " tables");
         }, 1000); // Wait 1 second for all tables to be fully initialized
     });
 
